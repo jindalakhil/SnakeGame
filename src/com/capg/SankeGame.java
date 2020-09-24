@@ -8,12 +8,19 @@ public class SankeGame {
 		int action = (int) Math.floor(Math.random() * 10) % 3;
 		
 		int position = start;
-		if(action == 1) {
-			return;
-		}else if(action ==2) {
-			position += diceValue;
-		} else {
-			position -= diceValue;
+		
+		while(position != 100) {
+			if(action > 100) {
+				continue;
+			} else {
+				if(action == 1) {
+					return;
+				}else if(action ==2) {
+					position += diceValue;
+				} else {
+					position -= diceValue;
+				}
+			}
 		}
 	}
 }
