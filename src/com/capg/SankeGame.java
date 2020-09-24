@@ -5,6 +5,7 @@ public class SankeGame {
 		System.out.println("Welcome to game");
 		int start = 0;
 		int position = start;
+		int count = 0;
 		
 		while(position != 100) {
 			int diceValue = (int) Math.floor(Math.random() * 10) % 6;
@@ -12,6 +13,8 @@ public class SankeGame {
 			int noPlay = 1;
 			int ladder = 2;
 			int snake = 0;
+			count++; 
+			
 			if(action == noPlay) {
 				System.out.println("Stay in the same position");
 			}else if(action == ladder) {
@@ -31,7 +34,11 @@ public class SankeGame {
 					position -=diceValue;
 				}
 			}
+			
+			System.out.println("Updated Position: " + position);
 		}
+		
+		System.out.println("Number of time dice played: " + count);
 		
 	}
 }
